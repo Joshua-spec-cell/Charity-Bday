@@ -596,7 +596,7 @@ const fx = (() => {
 (function player() {
   const root = $('#player'), audio = $('#audio'), fab = $('#playerFab'), panel = $('#playerPanel');
   const play = $('#pPlay'), seek = $('#pSeek'), vol = $('#pVol'), cur = $('#tCur'), dur = $('#tDur'), missing = $('#songMissing');
-$('#songTitle').textContent = MUSIC.title;
+ audio.src = MUSIC.src; $('#songTitle').textContent = MUSIC.title;
   audio.volume = +vol.value;
   const fmt = s => isFinite(s) ? Math.floor(s / 60) + ':' + String(Math.floor(s % 60)).padStart(2, '0') : '0:00';
   const fill = el => el.style.setProperty('--fill', ((el.value - el.min) / (el.max - el.min) * 100) + '%');
